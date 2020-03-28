@@ -25,7 +25,7 @@ const HeroCardContainer = props => {
 
   useEffect(() => {
     props.updateHeroList(data);
-  }, [props.addedHero]);
+  }, [props.addedHero, error]);
 
   if (error) {
     return <div className="error"> No hero found: {error.toString()}</div>;

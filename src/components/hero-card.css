@@ -1,5 +1,28 @@
 .hero-card {
-  border: 2px solid black;
   padding: 10px;
   margin: 30px;
+  border-radius: 16px;
+  transition: all 0.3 ease-in-out;
+}
+
+.img-container {
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px 16px 0 0;
+  opacity: 0.9;
+  border-bottom: 6px solid rgb(48, 48, 48);
+}
+
+.hero-card h1 {
+  color: rgb(48, 48, 48);
+  margin: 15px 0 0 0;
+  text-align: center;
+}
+
+.hero-card:hover {
+  background: #d16363;
+  box-shadow: 5px 5px 10px #b05353, -5px -5px 10px #f27373;
+  transition: box-shadow 0.2s ease-in-out;
 }

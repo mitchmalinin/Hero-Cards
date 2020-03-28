@@ -1,0 +1,58 @@
+.user-input-container {
+  background-color: #1ab1f3;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-input-text {
+  padding: 20px;
+  border-radius: 16px;
+
+  background: linear-gradient(145deg, #179fdb, #1cbdff);
+  box-shadow: 5px 5px 10px #1695cc, -5px -5px 10px #1ecdff;
+}
+
+.user-input-text h1 {
+  color: white;
+}
+
+.user-input-feild {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-input-feild input {
+  width: 60%;
+  border-radius: 16px;
+  background: none;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  background: #1ab1f3;
+  box-shadow: inset 16px 16px 32px #158fc5, inset -16px -16px 32px #1fd3ff;
+  color: white;
+  font-size: 20px;
+  outline: none;
+}
+
+.user-input-feild button {
+  border-radius: 16px;
+  background: linear-gradient(145deg, #179fdb, #1cbdff);
+  box-shadow: 5px 5px 10px #158fc5, -5px -5px 10px #1fd3ff;
+  color: white;
+  border: none;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  /* transition: box-shadow 3s ease; */
+}
+.user-input-feild button:hover {
+  border-radius: 16px;
+  background: #1ab1f3;
+  box-shadow: inset 16px 16px 32px #158fc5, inset -16px -16px 32px #1fd3ff;
+  transition: box-shadow 0.3s ease-in-out;
+}
