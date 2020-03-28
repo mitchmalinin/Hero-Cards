@@ -9,12 +9,17 @@ const useHttp = (url, params) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log("url", url);
+        // console.log("url", url);
         let response = await fetch(url);
         let data = await response.json();
         console.log("this is data", data);
-        setData(data.results);
-        setLoading(false);
+        if (data.response !== "error") {
+          setData(data.results);
+          setLoading(false);
+        } else {
+          setError(data.response);
+        }
+        // console.log("error", error);
       } catch (err) {
         setError(err);
       }
@@ -22,7 +27,7 @@ const useHttp = (url, params) => {
     fetchData();
   }, params);
 
-  console.log("is loading from http", isLoading);
+  // console.log("is loading from http", isLoading);
   return [data, isLoading, error];
 };
 

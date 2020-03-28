@@ -2,9 +2,11 @@ import React from "react";
 import HeroCard from "./hero-card";
 import "./hero-card-conainer.css";
 import useHttp from "../hooks/http";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const HeroCardContainer = props => {
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [
     data,
     isLoading,
@@ -15,12 +17,18 @@ const HeroCardContainer = props => {
     [props.addedHero]
   );
 
+  console.log("info from hero cont", data, isLoading);
+  if (data && data.response === "error") {
+    console.log("datatatataa", data.response);
+    setErrorMessage(data.error);
+  }
+
   useEffect(() => {
     props.updateHeroList(data);
   }, [props.addedHero]);
 
   if (error) {
-    return <div className="error">{error.toString()}</div>;
+    return <div className="error"> No hero found: {error.toString()}</div>;
   }
 
   return (
