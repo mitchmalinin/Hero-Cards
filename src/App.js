@@ -23,14 +23,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <>
+      <div className="container">
         <UserInput addUserInput={userInputHandler} />
         <HeroCardContainer
           updateHeroList={updateHeroList}
           addedHero={selectedHero}
           heroList={heroList}
         />
-      </>
+      </div>
     </div>
   );
 };
