@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import "./hero-card.css";
 const HeroCard = props => {
-  const [selectedHero, setSelectedHero] = useState("");
-  console.log("hero id", selectedHero);
-  const onClick = e => {
-    setSelectedHero(e.target.id);
-    console.log("hero id", selectedHero);
-  };
-
   return (
-    <div id={props.hero.id} className="hero-card" onClick={e => onClick(e)}>
+    <div
+      id={props.hero.id}
+      className="hero-card"
+      onClick={() => props.updateHeroList(props.hero)}
+    >
       <div
         className="img-container"
         style={{ backgroundImage: `url(${props.hero.image.url})` }}

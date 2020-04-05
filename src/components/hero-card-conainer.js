@@ -23,10 +23,6 @@ const HeroCardContainer = props => {
     setErrorMessage(data.error);
   }
 
-  useEffect(() => {
-    props.updateHeroList(data);
-  }, [props.addedHero, error]);
-
   if (error) {
     return <div className="error"> No hero found: {error.toString()}</div>;
   }
@@ -35,7 +31,13 @@ const HeroCardContainer = props => {
     <div className="card-container">
       {!isLoading && data ? (
         data.map((hero, i) => {
-          return <HeroCard key={i} hero={hero} />;
+          return (
+            <HeroCard
+              key={i}
+              hero={hero}
+              updateHeroList={props.updateHeroList}
+            />
+          );
         })
       ) : (
         <div>Loading...</div>
