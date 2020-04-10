@@ -1,16 +1,16 @@
 import React from "react";
 import HeroCard from "./hero-card";
-import "./hero-card-conainer.css";
 import useHttp from "../hooks/http";
 import { useState, useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 
-const HeroCardContainer = props => {
+const HeroCardContainer = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const [
     data,
     isLoading,
-    error
+    error,
   ] = useHttp(
     "https://www.superheroapi.com/api.php/10215492002188454/search/" +
       props.addedHero,
@@ -40,7 +40,11 @@ const HeroCardContainer = props => {
           );
         })
       ) : (
-        <div>Loading...</div>
+        <div className="spinner-icon">
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
       )}
     </div>
   );
